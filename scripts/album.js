@@ -69,7 +69,14 @@ var createSongRow = function(songNumber, songName, songLength) {
         var currentParent = element.parentElement;
         while (currentParent.className !== targetClass && currentParent.className !== null) {
             currentParent = currentParent.parentElement;
+            if(currentParent === null) {
+                console.log("No parent found.")
+            };
+            if(currentParent.className !== targetClass) {
+                console.log("No parent found with that class.")
+            };
         }
+
         return currentParent;
     }
 };
